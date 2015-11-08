@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>P2P Serverless Hosting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+    <style>
+      .container {
+        max-width: 800px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="new-page" style="display: none">
+        <p>Current peers: <span id="peers-count">0</span></p>
+        <div id="js-console" class="web-console"><ul></ul></div>
+        <hr>
+        <div id="content-goes-here">
+          <div class="jumbotron">
+            <h2>Welcome to P2P Serverless Hosting</h2>
+            <p class="lead">Enter the page content you want below. After you submit, you will be redirected to your new page. That page will live as long as someone, somewhere is viewing it. Once the last person closes their browser, the page will be gone.</p>
+          </div>
+          <form>
+            <div class="form-group">
+              <textarea id="new-page-content" name="new-page-content" class="form-control" rows="10" required="true"></textarea>
+            </div>
+            <div class="form-group">
+              <button id="create-new-page" type="submit" class="btn btn-default">Create new page</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webtorrent/0.62.3/webtorrent.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
