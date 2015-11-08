@@ -1,15 +1,15 @@
 var client = new WebTorrent()
 
 if (window.location.hash) {    
-  $('#content-goes-here').html('Downloading page from peers...');
+  $('#content-goes-here').html('Downloading page from seeds...');
   $('#new-page').show()
   client.download('magnet:?xt=urn:btih:' + document.URL.substr(document.URL.indexOf('#') + 1), function (torrent) {
     swarm = torrent.swarm
 
-    $('#peers-count').html(swarm.wires.length + 1)
+    $('#seeds-count').html(swarm.wires.length + 1)
 
     swarm.on('wire', function(wire) {
-      $('#peers-count').html(swarm.wires.length + 1)
+      $('#seeds-count').html(swarm.wires.length + 1)
     });
 
     var file = torrent.files[0]
@@ -38,7 +38,7 @@ else
       swarm = torrent.swarm
       
       swarm.on('wire', function(wire) {
-        $('#peers-count').html(swarm.wires.length + 1)
+        $('#seeds-count').html(swarm.wires.length + 1)
       });
     });
     return false;
